@@ -9,45 +9,17 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-include_once "db/Connection.php";
-$getSoftWareNames = "SELECT `name` FROM `software`";
-?>
+<h1 style="color: blueviolet">Choose filtering style</h1>
 <div class="block">
-    <h2>Get Computers by processor type</h2>
-    <form action="/view/GetComputerByProcessor.php" method="get">
-        <p>
-            <input type="text" name="processor"/>
-        </p>
-        <button type="submit">Get Computers</button>
-    </form>
+    <a href="pages/Proccessor.php">By Processor<a><br>
 </div>
 
 <div class="block">
-    <h2>Get Computers by software</h2>
-    <form action="/view/GetComputersBySoftWare.php" method="get">
-        <p>
-            <select name='software'>
-                <option disabled>select software</option>
-                <?php
-                foreach ($db->query($getSoftWareNames) as $row) {
-                    echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
-                }
-                ?>
-            </select>
-        </p>
-        <button type="submit">Get Computers</button>
-    </form>
+    <a href="pages/SoftWare.php">By Software<a><br>
 </div>
 
 <div class="block">
-    <h2>Get Computers with bad garantee up to date</h2>
-    <form action="/view/GetComputerWithBadGarantee.php" method="get">
-        <p>
-            <input type="date" name="date">
-        </p>
-        <button type="submit">Get Computers</button>
-    </form>
+    <a href="pages/Garantee.php">By Garantee<a><br>
 </div>
 </body>
 </html>
